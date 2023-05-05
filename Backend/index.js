@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-    res.send({message:"app started successfully!"})
+    res.send({ message: "app started successfully!" })
 })
 
 const API = "https://api.wazirx.com/api/v2/tickers";
@@ -24,7 +24,7 @@ app.get("/gettickers", async (req, respo) => {
     const response = await resp.json();
     let res = {};
     let keys = Object.keys(response);
-    for(let key=0;key<Math.min(10,keys.length);key++){
+    for (let key = 0; key < Math.min(10, keys.length); key++) {
         res[keys[key]] = response[keys[key]];
         // console.log(response[keys[key]]);
     }
